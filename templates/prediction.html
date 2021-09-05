@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .background-wrap{
+            height: 100vh;
+            background-image: url({{ url_for('static', filename='iris_flower.jpg') }});
+        }
+        .wrapper {
+            padding-top: 40px;
+            display: flex;
+        }
+        .predict-card {
+            width: 300px;
+            background-color: white;
+            margin: auto;
+            border: 6px solid purple;
+            border-radius: 8px;
+            padding: 20px;
+            display: inline-block;
+        }
+        .result {
+            font-size: 48px;
+            font-weight: 700;
+            color: purple;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .go-back-btn {
+            text-decoration: none;
+            margin: 0 auto;
+            font-size: 32px;
+            padding: 4px 6px;
+            border-radius: 4px;
+            border: 2px solid green;
+            color: green;
+        }
+        .go-back-btn:hover {
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-wrap">
+        <div class="wrapper">
+            <div class="predict-card">
+                <div class="result">
+                    {{ result }}
+                </div>
+                <div style="display: flex;">
+                    <a href="/" class="go-back-btn">Continue Predict</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
